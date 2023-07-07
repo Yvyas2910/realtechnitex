@@ -13,12 +13,17 @@ import userRoter from "./routes/userRoter.js";
 
 import cors from "cors";
 import path from "path";
+import {fileURLToPath} from "url";
 
 //configure environment variables
 dotenv.config();
 
 //database configuration
 connectDB();
+
+//es module fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //rest object
 const app = express();
